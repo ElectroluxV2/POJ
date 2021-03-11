@@ -1,14 +1,6 @@
-package com.github.electroluxv2.laboratory.l1;
+package com.github.electroluxv2.laboratory.l1.Exercise3;
 
 public class Exercise3 {
-    // Napisz program, który za pomocą pętli wydrukuje tabelkę (od 1 do 10):
-    // Miles Kilometers
-    // 1     1.609
-    // 2     3.218
-    // ...
-    // 9     14.481
-    // 10    16.090
-
     private static final double MI_TO_KM = 1.609;
 
     public static void main(String[] args) {
