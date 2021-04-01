@@ -146,7 +146,7 @@ public class Exercise6 {
         return Weapon.values()[choice];
     }
 
-    private static long stringToSeed(String s) {
+    public static long stringToSeed(String s) {
         // https://stackoverflow.com/questions/23981678/is-it-possible-to-use-a-string-as-a-seed-for-an-instance-random
         if (s == null) {
             return 0;
