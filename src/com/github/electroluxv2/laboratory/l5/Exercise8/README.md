@@ -29,4 +29,7 @@ public class App {
 ```
 
 # Result
-![Result](./img.png?raw=true)
+Java to język dla ludzi nie chcących przejmować się wydajnością <br><br>
+Opinie programistów non stl c pg:<br>
+"fajna" ~Ja 2k21<br>
+"nie fajna" ~Ja 2k14
