@@ -3,7 +3,7 @@ package com.github.electroluxv2.laboratory.l5.Exercise2;
 import java.util.Arrays;
 
 // W treści brak getterów i setterów więc final
-public final class Bookshop extends Shop {
+final class Bookshop extends Shop {
     private final String[] products;
 
     public Bookshop(String address, int size, String[] products) {
