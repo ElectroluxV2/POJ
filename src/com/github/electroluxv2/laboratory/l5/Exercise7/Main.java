@@ -18,6 +18,5 @@ public class Main {
         System.out.printf("SuperHuman3 to Human: %b%n", superHuman3.equals(human));
         System.out.printf("SuperHuman3 to SuperHuman2: %b%n", superHuman3.equals(superHuman2));
         System.out.printf("SuperHuman3 to SuperHuman3: %b%n", superHuman3.equals(superHuman3));
-
     }
 }
