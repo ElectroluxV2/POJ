@@ -1,10 +1,10 @@
 package com.github.electroluxv2.laboratory.l5.Exercise1;
 
 public abstract class Animal {
-    protected String name;
-    protected String color;
+    private final String name;
+    private final String color;
 
-    public Animal(String name, String color) {
+    protected Animal(String name, String color) {
         this.name = name;
         this.color = color;
     }
