@@ -1,6 +1,7 @@
 package com.github.electroluxv2.laboratory.l5.Exercise1;
 
-public abstract class Animal {
+// Package scope
+abstract class Animal {
     private final String name;
     private final String color;
 
