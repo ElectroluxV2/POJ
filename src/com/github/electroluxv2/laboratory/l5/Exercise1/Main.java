@@ -2,7 +2,7 @@ package com.github.electroluxv2.laboratory.l5.Exercise1;
 
 class Main {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         final Cat cat = new Cat("Robert", "Black");
         final Dog dog = new Dog("Artur", "White");
 

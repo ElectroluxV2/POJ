@@ -8,7 +8,7 @@ class Human {
     private final String name;
     private final int age;
 
-    public Human(String name, int age) {
+    public Human(final String name, final int age) {
         this.name = name;
         this.age = age;
     }
@@ -18,7 +18,7 @@ class Human {
     }
 
     @Override
-    public boolean equals(Object other) {
+    public boolean equals(final Object other) {
         if (this == other) return true;
         if (other == null) return false;
         if (!(other instanceof final Human otherHuman)) return false;

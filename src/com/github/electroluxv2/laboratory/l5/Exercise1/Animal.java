@@ -5,7 +5,7 @@ abstract class Animal {
     private final String name;
     private final String color;
 
-    protected Animal(String name, String color) {
+    protected Animal(final String name, final String color) {
         this.name = name;
         this.color = color;
     }

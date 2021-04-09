@@ -5,7 +5,7 @@ import java.util.Arrays;
 final class Class {
     private final String[] args;
 
-    public Class(String arg1, String arg2, String arg3, String arg4, String arg5) {
+    public Class(final String arg1, final String arg2, final String arg3, final String arg4, final String arg5) {
         this.args = new String[] {
             arg1,
             arg2,
@@ -16,7 +16,7 @@ final class Class {
     }
 
     @Override
-    public String toString() {
+    public final String toString() {
         return "Class containing args: %s".formatted(Arrays.toString(this.args));
     }
 }

@@ -5,7 +5,7 @@ abstract class Shop {
     private final String address;
     private final int size;
 
-    protected Shop(String address, int size) {
+    protected Shop(final String address, final int size) {
         this.address = address;
         this.size = size;
     }

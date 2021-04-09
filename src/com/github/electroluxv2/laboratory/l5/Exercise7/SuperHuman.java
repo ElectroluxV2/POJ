@@ -2,16 +2,16 @@ package com.github.electroluxv2.laboratory.l5.Exercise7;
 
 import java.util.Objects;
 
-class SuperHuman extends Human {
+final class SuperHuman extends Human {
     private final String power;
 
-    public SuperHuman(String name, int age, String power) {
+    public SuperHuman(final String name, final int age, final String power) {
         super(name, age);
         this.power = power;
     }
 
     @Override
-    public String getPower() {
+    public final String getPower() {
         return power;
     }
 
@@ -22,7 +22,7 @@ class SuperHuman extends Human {
     } */
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return Objects.hash(super.hashCode(), power);
     }
 }

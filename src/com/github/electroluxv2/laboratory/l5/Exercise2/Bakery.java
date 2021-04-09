@@ -6,7 +6,7 @@ import java.util.Arrays;
 final class Bakery extends Shop {
     private final String[] products;
 
-    public Bakery(String address, int size, String[] products) {
+    public Bakery(final String address, final int size, final String[] products) {
         super(address, size);
         this.products = products;
     }

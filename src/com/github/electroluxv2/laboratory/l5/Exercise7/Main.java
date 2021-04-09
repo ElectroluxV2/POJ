@@ -2,7 +2,7 @@ package com.github.electroluxv2.laboratory.l5.Exercise7;
 
 class Main {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         final Human human = new Human("Robert", 36);
         final Human human2 = new Human("Robert", 36);
         final SuperHuman superHuman = new SuperHuman("Robert", 36, "None");

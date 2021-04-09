@@ -2,7 +2,7 @@ package com.github.electroluxv2.laboratory.l5.Exercise1;
 
 final class Dog extends Animal {
 
-    public Dog(String name, String color) {
+    public Dog(final String name, final String color) {
         super(name, color);
     }
 
