@@ -2,7 +2,7 @@ package com.github.electroluxv2.laboratory.l5.Exercise4;
 
 import java.util.Arrays;
 
-class Class {
+final class Class {
     private final String[] args;
 
     public Class(String arg1, String arg2, String arg3, String arg4, String arg5) {
