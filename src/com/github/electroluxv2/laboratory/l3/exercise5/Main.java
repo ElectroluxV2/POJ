@@ -3,7 +3,7 @@ package com.github.electroluxv2.laboratory.l3.exercise5;
 import java.util.Scanner;
 import java.util.StringJoiner;
 
-public class Exercise5 {
+public class Main {
 
     public static void main(String[] args) {
         Account[] accounts = new Account[10];

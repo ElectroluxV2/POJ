@@ -1,6 +1,6 @@
 package com.github.electroluxv2.laboratory.l3.exercise3;
 
-public class Exercise3 {
+public class Main {
 
     public static void main(String[] args) throws Exception {
         Remote remote = new Remote();
