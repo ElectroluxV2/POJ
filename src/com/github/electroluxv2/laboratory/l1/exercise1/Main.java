@@ -1,0 +1,8 @@
+package com.github.electroluxv2.laboratory.l1.exercise1;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("Hello world");
+    }
+}
