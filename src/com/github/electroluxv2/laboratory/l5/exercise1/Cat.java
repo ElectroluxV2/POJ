@@ -7,7 +7,7 @@ final class Cat extends Animal {
     }
 
     @Override
-    public final String makeSound() {
+    final String makeSound() {
         return "moew moew you crazy man";
     }
 

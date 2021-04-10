@@ -1,6 +1,5 @@
 package com.github.electroluxv2.laboratory.l5.exercise1;
 
-// Package scope
 abstract class Animal {
     private final String name;
     private final String color;
@@ -10,7 +9,7 @@ abstract class Animal {
         this.color = color;
     }
 
-    abstract public String makeSound();
+    abstract String makeSound();
 
     @Override
     public String toString() {

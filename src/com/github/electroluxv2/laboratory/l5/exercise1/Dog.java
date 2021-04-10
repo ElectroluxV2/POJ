@@ -2,12 +2,12 @@ package com.github.electroluxv2.laboratory.l5.exercise1;
 
 final class Dog extends Animal {
 
-    public Dog(final String name, final String color) {
+    Dog(final String name, final String color) {
         super(name, color);
     }
 
     @Override
-    public final String makeSound() {
+    final String makeSound() {
         return "Wopf wopf";
     }
 
