@@ -11,8 +11,23 @@ c) preserveSigns(String text, Sign sign):String – usuwa wszystkie znaki opróc
     Wykonaj poniższy kod:<br>
 
 ```java
-public static void main(final String[] args) {    System.out.println(">>> removeSigns");    System.out.println(removeSigns("123 Testo wanie", Sign.NUMBER));    System.out.println(removeSigns("123 Testo wanie", Sign.SPACE));    System.out.println(removeSigns("123 Testo wanie", Sign.VOWEL));    System.out.println(removeSigns("123 Testo wanie", Sign.CONSONANT));    System.out.println(">>> replaceSigns");    System.out.println(replaceSigns("123 Testo wanie", Sign.NUMBER, "#"));    System.out.println(replaceSigns("123 Testo wanie", Sign.SPACE, "#"));    System.out.println(replaceSigns("123 Testo wanie", Sign.VOWEL, "#"));    System.out.println(replaceSigns("123 Testo wanie", Sign.CONSONANT, "#"));    System.out.println(">>> preserveSigns");    System.out.println(preserveSigns("123 Testo wanie", Sign.NUMBER));    System.out.println(preserveSigns("123 Testo wanie", Sign.SPACE));    System.out.println(preserveSigns("123 Testo wanie", Sign.VOWEL));    System.out.println(preserveSigns("123 Testo wanie", Sign.CONSONANT));}
-```
+public static void main(final String[] args) {
+  System.out.println(">>> removeSigns");
+  System.out.println(removeSigns("123 Testo wanie", Sign.NUMBER));
+  System.out.println(removeSigns("123 Testo wanie", Sign.SPACE));
+  System.out.println(removeSigns("123 Testo wanie", Sign.VOWEL));
+  System.out.println(removeSigns("123 Testo wanie", Sign.CONSONANT));
+  System.out.println(">>> replaceSigns");
+  System.out.println(replaceSigns("123 Testo wanie", Sign.NUMBER, "#"));
+  System.out.println(replaceSigns("123 Testo wanie", Sign.SPACE, "#"));
+  System.out.println(replaceSigns("123 Testo wanie", Sign.VOWEL, "#"));
+  System.out.println(replaceSigns("123 Testo wanie", Sign.CONSONANT, "#"));
+  System.out.println(">>> preserveSigns");
+  System.out.println(preserveSigns("123 Testo wanie", Sign.NUMBER));
+  System.out.println(preserveSigns("123 Testo wanie", Sign.SPACE));
+  System.out.println(preserveSigns("123 Testo wanie", Sign.VOWEL));
+  System.out.println(preserveSigns("123 Testo wanie", Sign.CONSONANT));
+}```
 
 
 Oczekiwane rezultaty:<br>>> removeSigns <br>Testo wanie123Testowanie123 Tst wn123 eo aie>>> replaceSigns### Testo wanie123#Testo#wanie123 T#st# w#n##123 #e##o #a#ie>>> preserveSigns123eoaieTstwn
