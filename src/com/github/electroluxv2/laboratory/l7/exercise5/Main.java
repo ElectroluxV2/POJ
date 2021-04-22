@@ -1,7 +1,5 @@
 package com.github.electroluxv2.laboratory.l7.exercise5;
 
-import com.github.electroluxv2.laboratory.l7.exercise7.Local;
-
 public class Main {
     public static void main(final String[] args) {
         final Local l1 = new Local("Merapar Poland", "Arkońska 6, 80-387 Gdańsk");

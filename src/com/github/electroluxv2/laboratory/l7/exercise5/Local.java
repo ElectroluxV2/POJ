@@ -1,4 +1,4 @@
-package com.github.electroluxv2.laboratory.l7.exercise7;
+package com.github.electroluxv2.laboratory.l7.exercise5;
 
 import java.util.StringJoiner;
 
