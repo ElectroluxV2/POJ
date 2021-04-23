@@ -27,10 +27,23 @@ public static void main(final String[] args) {
   System.out.println(preserveSigns("123 Testo wanie", Sign.SPACE));
   System.out.println(preserveSigns("123 Testo wanie", Sign.VOWEL));
   System.out.println(preserveSigns("123 Testo wanie", Sign.CONSONANT));
-}```
+}
+```
 
 
-Oczekiwane rezultaty:<br>>> removeSigns <br>Testo wanie123Testowanie123 Tst wn123 eo aie>>> replaceSigns### Testo wanie123#Testo#wanie123 T#st# w#n##123 #e##o #a#ie>>> preserveSigns123eoaieTstwn
+Oczekiwane rezultaty:<br>
+\>>> removeSigns <br>
+Testo wanie<br>
+123Testowanie<br>
+123 Tst wn<br>
+123 eo aie<br><br>
+\>>> replaceSigns<br>
+\### Testo wanie<br>
+123#Testo#wanie<br>
+123 T#st# w#n##<br>
+123 #e##o #a#ie<br>
+\>>> preserveSigns<br>
+123eoaieTstwn
 
 # Result
 ![Result](./img.png?raw=true)
