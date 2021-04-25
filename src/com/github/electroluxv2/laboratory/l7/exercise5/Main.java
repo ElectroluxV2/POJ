@@ -1,9 +1,5 @@
 package com.github.electroluxv2.laboratory.l7.exercise5;
 
-import java.util.Arrays;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class Main {
     public static void main(final String[] args) throws Exception {
 
