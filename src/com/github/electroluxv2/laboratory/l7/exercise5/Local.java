@@ -1,8 +1,10 @@
 package com.github.electroluxv2.laboratory.l7.exercise5;
 
-import java.util.StringJoiner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Local {
+    private final static Pattern REGEX = Pattern.compile("(?<street>.+?(?=[0-9]))(((?<houseNumber>[a-zA-Z0-9]+)\\/(?<localNumber>[a-zA-Z0-9]+),)|(?<houseNumberOnly>[A-z0-9]+),) (?<postalCode>[0-9]{2}-[0-9]{3}) (?<city>\\S+)");
     private final String name;
     private final String city;
     private final String postalCode;
@@ -10,28 +12,26 @@ public class Local {
     private final String houseNumber;
     private final String localNumber;
 
-    public Local(final String name, final String address) {
+    public Local(final String name, final String address) throws Exception {
         this.name = name;
-        final String[] parts = address.split(" ");
-        this.city = parts[parts.length - 1];
-        this.postalCode = parts[parts.length - 2];
 
-        final String houseAndLocalNumber = parts[parts.length - 3];
-        final String[] temp = houseAndLocalNumber.split("/");
-        if (temp.length == 1) {
-            this.houseNumber = temp[0].substring(0, temp[0].length() - 1);
+        Matcher matcher = Local.REGEX.matcher(address);
+
+        if (!matcher.find()) {
+            throw new Exception("Invalid address data, given: %s".formatted(address));
+        }
+
+        this.city = matcher.group("city");
+        this.postalCode = matcher.group("postalCode");
+        this.street = matcher.group("street").trim();
+
+        if (matcher.group("houseNumberOnly") != null) {
+            this.houseNumber = matcher.group("houseNumberOnly");
             this.localNumber = null;
         } else {
-            this.houseNumber = temp[0];
-            this.localNumber = temp[1].substring(0, temp[1].length() - 1);
+            this.houseNumber = matcher.group("houseNumber");
+            this.localNumber = matcher.group("localNumber");
         }
-
-        final StringJoiner stringJoiner = new StringJoiner(" ");
-        for (int i = 0; i < parts.length - 3; i++) {
-            stringJoiner.add(parts[i]);
-        }
-
-        this.street = stringJoiner.toString();
     }
 
     @Override
