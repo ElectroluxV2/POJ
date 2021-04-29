@@ -20,7 +20,7 @@ public class Person {
      * }
      **/
 
-    private static int parseBirthYear(final String birthYear) {
+    private static int parseBirthYear(final String birthYear) throws IllegalArgumentException {
         int birthYearParsed;
 
         try {
