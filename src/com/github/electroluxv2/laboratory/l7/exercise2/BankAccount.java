@@ -63,7 +63,7 @@ public class BankAccount {
             throw new InsufficientFundsException("You don't have enough funds to withdraw $%.2f".formatted(withdrawAmount));
         }
 
-        this.balance = BankAccount.round(this.balance - withdrawAmount);
+        this.balance = BankAccount.round(this.balance - Math.abs(withdrawAmount));
     }
 
     public void printBalance() {
