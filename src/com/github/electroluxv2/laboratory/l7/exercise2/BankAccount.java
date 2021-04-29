@@ -21,7 +21,7 @@ public class BankAccount {
     }
 
     private static String stripStringToContainOnlyNumbers(final String string) {
-        return string.replaceAll("\\D", BankAccount.EMPTY);
+        return string.replaceAll("[^0-9.]+", BankAccount.EMPTY);
     }
 
     private static double parseUserInput(final String userInput) throws IllegalArgumentException {
