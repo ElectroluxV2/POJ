@@ -40,13 +40,13 @@ public class BankAccount {
             else { this.deposit(operationValue); }
 
         } catch (InsufficientFundsException e) {
-            System.out.printf("Transaction error: %s", e.getMessage());
+            System.out.printf("Transaction error: %s%n", e.getMessage());
 
         } catch (NumberFormatException e) {
-            System.out.printf("Input error: %s", e.getMessage());
+            System.out.printf("Input error: %s%n", e.getMessage());
 
         } catch (MoreThanEnoughFundsException | IllegalArgumentException e) {
-            System.out.printf("System error: %s", e.getMessage());
+            System.out.printf("System error: %s%n", e.getMessage());
         }
     }
 
