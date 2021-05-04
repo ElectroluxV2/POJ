@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 public class Main {
 
     public static void main(final String[] args) throws IOException {
-        final String exercisePathString = Files.createDirectories(Paths.get("exercise")).toString();
+        final String exercisePathString = Files.createDirectories(Paths.get("src/com/github/electroluxv2/laboratory/l8/exercise1/exercise")).toString();
         Files.createDirectories(Paths.get(exercisePathString, "dir1"));
         Files.createDirectories(Paths.get(exercisePathString, "dir2"));
 
