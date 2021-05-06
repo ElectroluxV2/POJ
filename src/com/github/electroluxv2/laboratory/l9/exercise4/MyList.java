@@ -55,7 +55,7 @@ public class MyList<T> {
         return -1;
     }
 
-    public T get(int index) throws IndexOutOfBoundsException {
+    public T get(final int index) throws IndexOutOfBoundsException {
         if (index < 0 || index >= this.currentIndex) {
             throw new IndexOutOfBoundsException();
         }
@@ -63,7 +63,7 @@ public class MyList<T> {
         return this.array[index];
     }
 
-    public void set(int index, T value) throws IndexOutOfBoundsException {
+    public void set(final int index, final T value) throws IndexOutOfBoundsException {
         if (index < 0 || index >= 20) {
             throw new IndexOutOfBoundsException();
         }
