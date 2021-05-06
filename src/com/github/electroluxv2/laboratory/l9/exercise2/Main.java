@@ -6,13 +6,13 @@ public class Main {
 
     public static void main(final String[] args) {
         final Player[] players = new Player[]{
-            new Player("DDDD", "AAAA", 2, 1.13),
-            new Player("AABBCC", "DDEEFF", 1, 12.12),
-            new Player("ABC", "DEF", 10, 13.13),
-            new Player("AAAAAAA", "FFFFFF", 12, 12.13),
+            new Player("A", "AAAA", 2, 1.13),
+            new Player("B", "DDEEFF", 1, 12.12),
+            new Player("C", "DEF", 10, 13.13),
+            new Player("D", "FFFFFF", 12, 12.13),
         };
 
-        Arrays.sort(players);
+        Arrays.sort(players, Player::compareTo);
 
         System.out.println(Arrays.toString(players));
 
