@@ -16,7 +16,7 @@ public class MyList<T> {
     }
 
     public int size() {
-        return this.currentIndex;
+        return this.currentIndex + 1; // Count from 0
     }
 
     public boolean contains(final T element) {
