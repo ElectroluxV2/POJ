@@ -31,7 +31,7 @@ public class Main {
         System.out.printf("%nYour score: %d/%d%n", score, UIS);
     }
 
-    public static Set<Integer> getUnique(final int minValue, final int maxValue, final int size, Callable<Integer> resolver, Callable<Void> prompt) throws Exception {
+    public static Set<Integer> getUnique(final int minValue, final int maxValue, final int size, final Callable<Integer> resolver, final Callable<Void> prompt) throws Exception {
         Set<Integer> integers = new HashSet<>();
         while (integers.size() < size) {
             if (prompt != null) prompt.call();
