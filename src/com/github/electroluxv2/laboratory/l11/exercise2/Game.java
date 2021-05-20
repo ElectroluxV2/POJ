@@ -11,8 +11,8 @@ public enum Game {
     private final JTextField computerGuess = new JPasswordField();
     private final JLabel resultLabel = new JLabel();
 
-    private static final int WINDOW_WIDTH = 800;
-    private static final int WINDOW_HEIGHT = 600;
+    public static final int WINDOW_WIDTH = 800;
+    public static final int WINDOW_HEIGHT = 600;
     private static final int BOUND_MIN = 1;
     private static final int BOUND_MAX = 49;
 
@@ -76,7 +76,7 @@ public enum Game {
         }
     }
 
-    private static GridBagConstraints makeConstraints(final int x, final int y, final int width) {
+    public static GridBagConstraints makeConstraints(final int x, final int y, final int width) {
         final GridBagConstraints gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.insets = new Insets(5,5,5,5);
