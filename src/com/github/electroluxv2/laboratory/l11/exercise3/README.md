@@ -1,4 +1,4 @@
-# Exercise 1
+# Exercise 3
 Napisz program graficzny który przyjmie od użytkownika string i wyświetli go od tyłu.
 
 # Result
