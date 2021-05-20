@@ -36,8 +36,8 @@ public class Main {
         final JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());
 
-        Set<String> selected = new HashSet<>();
-        AtomicInteger x = new AtomicInteger();
+        final Set<String> selected = new HashSet<>();
+        final AtomicInteger x = new AtomicInteger();
 
         flags.forEach((k, v) -> {
             panel.add(v.changeVisible(false), Game.makeConstraints(x.get(), 0, 1));
