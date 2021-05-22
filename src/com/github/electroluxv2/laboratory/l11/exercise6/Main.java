@@ -11,10 +11,8 @@ import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.StringJoiner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,7 +24,6 @@ public class Main {
     static final Pattern simpleMathPattern = Pattern.compile("(\\+|\\*|-|/|[0-9]|\\s)*");
     static final String ERROR_MSG = "ERROR";
     static final String GOOD_MSG = "WELL FORMATTED";
-
 
     public static void setUpFrame() {
         // Main panel
@@ -100,7 +97,6 @@ public class Main {
                 final String result = wellFormatted == ERROR_MSG ? ERROR_MSG : String.valueOf(calculate(line));
 
                 final JLabel label = new JLabel("L%d: %s = %s (%s)".formatted(i, line, result, wellFormatted));
-                System.out.println(line);
                 fileContentPanel.add(label);
             }
 
