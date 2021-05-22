@@ -11,21 +11,30 @@ import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
+import java.util.StringJoiner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
     static final JFrame frame = new JFrame("Exercise 6");
     static final JLabel bottomLabel = new JLabel("Select text file to calculate results. File > Open", SwingConstants.CENTER);
     static final JFileChooser fileChooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
-    static JPanel labelPanel = new JPanel();
+    static JPanel fileContentPanel = new JPanel();
+    static final Pattern simpleMathPattern = Pattern.compile("(\\+|\\*|-|/|[0-9]|\\s)*");
+    static final String ERROR_MSG = "ERROR";
+    static final String GOOD_MSG = "WELL FORMATTED";
+
 
     public static void setUpFrame() {
         // Main panel
         final JPanel panel = new JPanel(new BorderLayout());
 
         // Scroll pane with dynamic labels
-        labelPanel.setLayout(new BoxLayout(labelPanel, BoxLayout.PAGE_AXIS));
-        final JScrollPane scrollPane = new JScrollPane(labelPanel);
+        fileContentPanel.setLayout(new BoxLayout(fileContentPanel, BoxLayout.PAGE_AXIS));
+        final JScrollPane scrollPane = new JScrollPane(fileContentPanel);
 
         // File chooser
         fileChooser.setFileFilter(new FileNameExtensionFilter("text files", "txt", "text"));
@@ -42,7 +51,6 @@ public class Main {
         item.addActionListener(Main::onMenuItemClick);
         menu.add(item);
         menuBar.add(menu);
-
 
         // Add Components
         panel.add(scrollPane, BorderLayout.CENTER);
@@ -76,27 +84,82 @@ public class Main {
         try {
 
             // Clear last result
-            labelPanel.removeAll();
+            fileContentPanel.removeAll();
 
             // Make label of every line in file
             final List<String> contents = Files.lines(file.toPath()).toList();
             for (int i = 0; i < contents.size(); i++) {
                 final String line = contents.get(i);
-                final JLabel label = new JLabel("L%d: %s".formatted(i, line));
+
+                // Validate
+                final Matcher matcher = simpleMathPattern.matcher(line);
+
+                final String wellFormatted = matcher.matches() ? GOOD_MSG : ERROR_MSG;
+
+                // String pool
+                final String result = wellFormatted == ERROR_MSG ? ERROR_MSG : String.valueOf(calculate(line));
+
+                final JLabel label = new JLabel("L%d: %s = %s (%s)".formatted(i, line, result, wellFormatted));
                 System.out.println(line);
-                labelPanel.add(label);
+                fileContentPanel.add(label);
             }
 
             // Show new labels in scroll pane
-            labelPanel.revalidate();
-            labelPanel.repaint();
+            fileContentPanel.revalidate();
+            fileContentPanel.repaint();
 
         } catch (IOException e) {
             bottomLabel.setText("An error occurred during file read: %s".formatted(e.getMessage()));
         }
     }
 
+
+    public static String addSpacesBetweenTokens(final String input) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < input.length(); i++) {
+            final char c = input.charAt(i);
+            if (c == '+' || c == '-' || c == '/' || c == '*') {
+                result.append(' ');
+                result.append(c);
+                result.append(' ');
+            } else {
+                result.append(c);
+            }
+        }
+        return result.toString();
+    }
+
+    public static double calculate(final String input) {
+        final String withSpaces = addSpacesBetweenTokens(input);
+        final Scanner scanner = new Scanner(withSpaces);
+
+        char lastToken = '+';
+        double result = 0;
+
+        while (scanner.hasNext()) {
+            // Here I can add support for floating types and other math expressions
+            if (scanner.hasNextInt()) {
+                final int number = scanner.nextInt();
+                result = doMath(result, number, lastToken);
+            } else {
+                lastToken = scanner.next().charAt(0);
+            }
+        }
+
+        return result;
+    }
+
+    public static double doMath(final double a, final double b, final char operator) throws IllegalArgumentException {
+        return switch (operator) {
+            case '+' -> a + b;
+            case '-' -> a - b;
+            case '*' -> a * b;
+            case '/', ':' -> a / b; // Division by 0 returns infinity not Exception
+            default -> throw new IllegalArgumentException("Wrong operator given: %s".formatted(operator));
+        };
+    }
+
     public static void main(final String[] args) {
-       setUpFrame();
+        setUpFrame();
     }
 }
