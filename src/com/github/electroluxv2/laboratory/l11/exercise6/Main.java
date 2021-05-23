@@ -151,6 +151,7 @@ public class Main {
             case '-' -> a - b;
             case '*' -> a * b;
             case '/', ':' -> a / b; // Division by 0 returns infinity not Exception
+            // Because of input regex matcher it will be never caught
             default -> throw new IllegalArgumentException("Wrong operator given: %s".formatted(operator));
         };
     }
