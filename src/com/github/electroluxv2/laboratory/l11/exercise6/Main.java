@@ -21,7 +21,7 @@ public class Main {
     static final JLabel bottomLabel = new JLabel("Select text file to calculate results. File > Open", SwingConstants.CENTER);
     static final JFileChooser fileChooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
     static JPanel fileContentPanel = new JPanel();
-    static final Pattern simpleMathPattern = Pattern.compile("(\\+|\\*|-|/|[0-9]|\\s)*");
+    static final Pattern simpleMathPattern = Pattern.compile("(\\+|\\*|-|\\/|[0-9]|\\s)*");
     static final String ERROR_MSG = "ERROR";
     static final String GOOD_MSG = "WELL FORMATTED";
 
